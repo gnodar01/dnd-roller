@@ -36,9 +36,9 @@ def sequence_rolls(sequence: str, verbose: bool = True) -> str:
         roll: dice_roll(*tuple(map(int, roll.split("d"))))
         for roll in map(str.strip, sequence.split(","))
     }
-    
+
     if verbose:
         table = [(seq, rolls, sum(rolls)) for seq, rolls in rolls_in_sequence.items()]
         print(tabulate(table, headers=HEADERS, tablefmt="fancy_grid"))
-    
+
     return rolls_in_sequence
