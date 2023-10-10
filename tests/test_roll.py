@@ -4,7 +4,7 @@ from dnd_roller import roll, SUPPORTED_DICE
 
 @pytest.mark.parametrize("dface", SUPPORTED_DICE[:-1])
 def test_roll_die_return_a_valid_number(dface):
-    assert roll(dface) in range(1, dface+1)
+    assert roll(dface) in range(1, dface + 1)
 
 
 def test_roll_d100():
@@ -19,7 +19,7 @@ def test_roll_with_nan_string_will_raise_exception():
 
 @pytest.mark.parametrize("dface", SUPPORTED_DICE[:-1])
 def test_roll_with_no_string_will_still_work_as_expected(dface):
-    assert roll(str(dface)) in range(1, dface+1)
+    assert roll(str(dface)) in range(1, dface + 1)
 
 
 def test_roll_with_unsupported_dice_will_raise_exception():
